@@ -27,4 +27,9 @@ void OS_Start(T_BOOT_INFO* P_Info) {
 		Affiche_Chaine("\n Ligne de commenda passée au noyau : ");
 		Affiche_Chaine((UCHAR*) P_Info->Ligne_De_Commande);
 	}
+
+	if ((P_Info->Flags & BOOT_INFO_BOOTLOADER) == BOOT_INFO_BOOTLOADER) {
+		Affiche_Chaine("\n Nom du bootloader: ");
+		Affiche_Chaine((UCHAR*) P_Info->Nom_BootLoader);
+	}
 }
