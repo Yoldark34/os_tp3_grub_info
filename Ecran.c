@@ -113,9 +113,13 @@ inline void Repositionne_Curseur()
     if (ECRAN_Curseur_Y>=NOMBRE_LIGNES) {
            Defilement_Haut();
            ECRAN_Curseur_Y--;
-     }
+	}
 }
 
+void reset_Cursor() {
+	ECRAN_Curseur_X = 0;
+	ECRAN_Curseur_Y = 0;
+}
 
 //--------------------------------------------------------------------------------------------------
 void Affiche_Caractere(UCHAR P_Caractere)
@@ -157,6 +161,10 @@ void Affiche_Chaine(UCHAR P_Chaine[])
 void Regle_Couleur(BYTE P_Attribut)
 {
    Attribut_Actuel=P_Attribut;
+}
+
+BYTE Donne_Couleur(BYTE P_Attribut) {
+	return Attribut_Actuel;
 }
 
 
