@@ -5,7 +5,9 @@
 
 void OS_Start(T_BOOT_INFO* P_Info) {
 	Efface_Ecran();
+	Affiche_Alien_2(VERT);
 	Affiche_Chaine(">>>BOOT");
+	BYTE prevColor = Donne_Couleur();
 	Regle_Couleur(10);
 	Affiche_Chaine("OK\n");
 
@@ -33,26 +35,23 @@ void OS_Start(T_BOOT_INFO* P_Info) {
 		Affiche_Chaine("\n Nom du bootloader: ");
 		Affiche_Chaine((UCHAR*) P_Info->Nom_BootLoader);
 	}
+	Regle_Couleur(prevColor);
 
-	/*Efface_Ecran();
 	while (1) {
 
 		int i = 0;
-		int boucle = 5000;
+		long boucle = 5000000L;
 
+		Affiche_Alien_1(VERT);
 		for (i = 0; i < boucle; i++) {
-			copyright();
-			Affiche_Alien_1(VERT);
-			reset_Cursor();
+			asm("NOP");
 		}
 
 
-		for (i = 0; i < boucle; i++) {
-			copyright();
-			Affiche_Alien_2(VERT);
-			reset_Cursor();
-
+		Affiche_Alien_2(VERT);
+		for (i = 0; i < boucle / 2; i++) {
+			asm("NOP");
 		}
 
-	}*/
+	}
 }

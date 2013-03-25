@@ -9,6 +9,7 @@
 #ifndef _ECRAN_H
 #define	_ECRAN_H
 
+#define NOIR       0x00
 #define BLEU       0x01
 #define FOND_BLEU  0x10
 #define VERT       0x02

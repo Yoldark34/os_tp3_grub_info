@@ -85,6 +85,14 @@ inline void Positionne_Curseur(BYTE P_X, BYTE P_Y)
    ECRAN_Curseur_X = P_X;
    ECRAN_Curseur_Y = P_Y;
 }
+
+BYTE Get_Cursor_Pos_X() {
+	return ECRAN_Curseur_X;
+}
+
+BYTE Get_Cursor_Pos_Y() {
+	return ECRAN_Curseur_Y;
+}
 //--------------------------------------------------------------------------------------------------
 inline void Affiche_Curseur()
 {
@@ -126,10 +134,10 @@ void Affiche_Caractere(UCHAR P_Caractere)
  {
   UINT16 L_Offset;
      switch (P_Caractere) {
-         case 10 : ECRAN_Curseur_Y++;
+		case 10: ECRAN_Curseur_Y++; //\n
                    ECRAN_Curseur_X=0;
                    break;
-         case 13 : ECRAN_Curseur_X=0;
+		case 13: ECRAN_Curseur_X = 0; //\t
                    break;
          case 9  : ECRAN_Curseur_X = ECRAN_Curseur_X + TAILLE_TABULATION;
                    ECRAN_Curseur_X = ECRAN_Curseur_X % NOMBRE_COLONNES;
