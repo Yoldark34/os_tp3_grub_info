@@ -36,7 +36,7 @@ extern T_CARACTERE_ECRAN* Map_Video;
   void Defilement_Haut();
   void Positionne_Curseur(BYTE P_X, BYTE P_Y);
   void Affiche_Caractere(UCHAR P_Caractere);
-  void Affiche_Chaine(UCHAR* P_Chaine);
+void Affiche_Chaine(UCHAR* P_Chaine);
   void Regle_Couleur(BYTE P_Attribut);
   BYTE Donne_Curseur_X();
   BYTE Donne_Curseur_Y();
